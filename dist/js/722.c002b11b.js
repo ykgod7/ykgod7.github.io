@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkblog_study"]=self["webpackChunkblog_study"]||[]).push([[722],{1722:function(e,a,t){t.r(a),t.d(a,{default:function(){return v}});var n=t(3396);const s=e=>((0,n.dD)("data-v-6edffe4f"),e=e(),(0,n.Cn)(),e),r={class:"container"},c=s((()=>(0,n._)("p",{class:"text-area"},"텍스트 영역",-1))),d=s((()=>(0,n._)("div",{class:"btn-area"},"버튼 영역",-1))),f=[c,d];function u(e,a){return(0,n.wg)(),(0,n.iD)("div",r,f)}var o=t(89);const i={},l=(0,o.Z)(i,[["render",u],["__scopeId","data-v-6edffe4f"]]);var v=l}}]);
+//# sourceMappingURL=722.c002b11b.js.map
