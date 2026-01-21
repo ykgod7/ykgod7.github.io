@@ -117,6 +117,47 @@
         <header class="section-head">
           <h2 id="skill-title" class="section-title">Skills</h2>
         </header>
+
+        <div class="card-list">
+          <article class="resume-card">
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-icon">
+                  <img src="@/assets/icons/vue-icon.svg" alt="" />
+                </span>
+                <span class="skill-name">Vue.js</span>
+              </li>
+
+              <li class="skill-item">
+                <span class="skill-icon">
+                  <img src="@/assets/icons/react-icon.svg" alt="" />
+                </span>
+                <span class="skill-name">React.js</span>
+              </li>
+
+              <li class="skill-item">
+                <span class="skill-icon">
+                  <img src="@/assets/icons/js-icon.svg" alt="" />
+                </span>
+                <span class="skill-name">Javascript</span>
+              </li>
+
+              <li class="skill-item">
+                <span class="skill-icon">
+                  <img src="@/assets/icons/html-icon.svg" alt="" />
+                </span>
+                <span class="skill-name">HTML</span>
+              </li>
+
+              <li class="skill-item">
+                <span class="skill-icon">
+                  <img src="@/assets/icons/css-icon.svg" alt="" />
+                </span>
+                <span class="skill-name">CSS</span>
+              </li>
+            </ul>
+          </article>
+        </div>
       </section>
     </div>
   </section>
@@ -204,6 +245,36 @@
               font-size: 17px;
               font-weight: 300;
               line-height: 1.5em;
+            }
+          }
+
+          .skill-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 35px 70px;
+
+            .skill-item {
+              display: flex;
+              align-items: center;
+              gap: 14px;
+
+              .skill-icon {
+                width: 25px;
+                height: 25px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .skill-name {
+                font-size: 18px;
+                font-weight: 300;
+              }
             }
           }
         }

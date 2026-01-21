@@ -1,9 +1,7 @@
-@import './variables.scss';
-
 /* Light */
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProLight.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProLight.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -11,7 +9,7 @@
 
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProLightOblique.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProLightOblique.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -20,7 +18,7 @@
 /* Book (Regular 역할) */
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProBook.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProBook.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,7 +26,7 @@
 
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProBookOblique.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProBookOblique.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -37,7 +35,7 @@
 /* Medium */
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProMedium.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProMedium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -45,7 +43,7 @@
 
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProMediumOblique.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProMediumOblique.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -54,7 +52,7 @@
 /* Heavy */
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProHeavy.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProHeavy.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -62,7 +60,7 @@
 
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProHeavyOblique.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProHeavyOblique.otf') format('opentype');
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -71,7 +69,7 @@
 /* Black */
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProBlack.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProBlack.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -79,7 +77,7 @@
 
 @font-face {
   font-family: 'Avenir LT Pro';
-  src: url('@/assets/fonts/AvenirLTProBlackOblique.otf') format('opentype');
+  src: url('@/assets/fonts/avenir/AvenirLTProBlackOblique.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
