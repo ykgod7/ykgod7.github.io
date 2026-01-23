@@ -181,7 +181,7 @@ watch(isOpen, (v) => {
 
   .fade-in-enter-active,
   .fade-in-leave-active {
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     will-change: opacity, transform;
   }
 
@@ -200,6 +200,8 @@ watch(isOpen, (v) => {
   }
 
   .site-header {
+    height: 80px;
+
     .header-inner {
       .logo {
         flex-direction: column;

@@ -8,7 +8,7 @@
               <img src="@/assets/images/profile_img.jpg" alt="본인 얼굴 사진" />
             </div>
   
-            <h1 class="profile-name">Jihwan<br/>Shin</h1>
+            <h1 class="profile-name">Jihwan<br/> Shin</h1>
   
             <div class="divider"></div>
   
@@ -81,9 +81,9 @@
   grid-template-columns: 375px 1fr;
   gap: 45px;
   align-items: center;
-  position: relative;
   z-index: 1;
   max-width: 1000px;
+  width: 100%;
   background: #fff;
   position: absolute;
   top: 50%;
@@ -222,21 +222,161 @@
   }
 }
 
-/* 모바일: 배경 분할 해제 + 카드 풀폭 */
-@media (max-width: 900px) {
-  .hero-inner::before {
-    width: 100%;
-    background: var(--bg-section);
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    width: 90%;
+    min-height: 530px;
+
+    .hero-profile {
+      .profile-top {
+        height: calc(100% - 53px);
+      }
+    }
+
+    .hero-description {
+      .title {
+        font-size: 58px;
+        line-height: 1.3;
+      }
+
+      .subtitle {
+        margin-top: 15px;
+      }
+
+      .btn-container {
+        margin: 45px 0;
+      }
+
+      .description {
+        br {
+          display: none;
+        }
+      }
+    }
   }
-  .hero-inner::after {
-    display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-inner {
+    &::before {
+      width: 100%;
+      height: 65%;  
+      left: 0;
+      bottom: 0;
+      top: unset;
+      right: unset;
+    }
+
+    &::after {
+      width: 100%;
+      height: 35%;
+      left: 0;
+      top: 0;
+      bottom: unset;
+      right: unset;
+    }
   }
 
   .hero-content {
-    left: 50%;
-    width: calc(100% - 40px);
-    padding: 28px 20px;
-    border-radius: 14px;
+    padding: 50px 30px 70px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    background-color: transparent;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: unset;
+    
+
+    .hero-profile {
+      height: unset;
+      width: min(70%, 380px);
+      margin: 0 auto;
+
+      .profile-top {
+        height: unset;
+        padding: 50px 0 40px;
+
+        .profile-name {
+          font-size: 28px;
+        }
+
+        .divider {
+          margin: 20px auto;
+          width: 45px;
+        }
+
+        .img-container {
+          width: 195px;
+          height: 195px;
+        }
+
+        .profile-name {
+          br {
+            display: none;
+          }
+        }
+      }
+
+      .profile-bottom {
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .hero-inner {
+    &::after {
+      height: 25%;
+    }
+
+    &::before {
+      height: 75%;
+    }
+  }
+
+  .hero-content {
+    padding: 30px 25px 50px;
+
+    .hero-profile {
+      width: min(90%, 320px);
+
+      .profile-top {
+        padding: 40px 0 30px;
+
+        .img-container {
+          width: 180px;
+          height: 180px;
+        }
+      }
+    }
+
+    .hero-description {
+      .title {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 19px;
+      }
+
+      .btn-container {
+        margin: 30px 0;
+
+        .btn {
+          width: 120px;
+          height: 33px;
+          font-size: 14px;
+        }
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
   }
 }
 </style>

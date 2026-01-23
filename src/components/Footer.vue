@@ -76,4 +76,33 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .site-footer {
+    .footer-inner {
+      padding: 30px 25px;
+      justify-content: flex-start;
+
+      .footer-right {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+
+        .footer-label {
+          text-align: left;
+          margin-bottom: 4px;
+        }
+
+        .footer-social {
+          padding-top: 5px;
+          justify-content: flex-start;
+
+          .icon-link {
+            width: 27px;
+            height: 27px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
