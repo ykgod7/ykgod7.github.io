@@ -55,7 +55,15 @@
           :key="idx"
           class="card"
         >
-          <img :src="img.src" :alt="img.alt" />
+          <video 
+            v-if="isVideo(img.src)" 
+            :src="img.src" 
+            controls 
+            muted 
+            playsinline 
+            loop
+          ></video>
+          <img v-else :src="img.src" :alt="img.alt" />
         </div>
       </div>
     </div>
@@ -71,6 +79,11 @@ const route = useRoute();
 const project = projects.find(
   p => p.slug === route.params.slug
 );
+
+const isVideo = (src) => {
+  if (!src) return false;
+  return src.toLowerCase().endsWith('.mp4');
+};
 </script>
 
 <style lang="scss" scoped>
@@ -136,11 +149,12 @@ const project = projects.find(
         }
 
         .overview-text {
+          font-family: 'Pretendard';
           color: var(--text-body);
           margin-top: 10px;
           font-size: 18px;
-          line-height: 1.8em;
-          font-weight: 300;
+          line-height: 1.5em;
+          font-weight: 400;
         }
 
         .meta-title {
@@ -179,10 +193,10 @@ const project = projects.find(
       gap: 40px;
 
       .card {
-        img {
+        img, video {
           width: 100%;
           height: 350px;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
     }
@@ -214,11 +228,14 @@ const project = projects.find(
         align-items: center;
 
         .feature-title {
+          font-family: 'Pretendard';
           font-size: 20px;
           font-weight: bold;
         }
 
         .feature-content {
+          font-family: 'Pretendard';
+          color: var(--text-body);
           margin-top: 12px;
           font-size: 16px;
           line-height: 1.8em;
@@ -257,8 +274,9 @@ const project = projects.find(
     }
 
     .text {
+      font-family: 'Pretendard';
       font-size: 17px;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-body);
       max-width: 800px;
       margin: 15px auto 0;

@@ -226,13 +226,78 @@
   font-display: swap;
 }
 
+/* Pretendard */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/assets/fonts/pretendard/Pretendard-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
-  font-family: 'Avenir LT Pro', -apple-system, BlinkMacSystemFont;
+  font-family: 'Avenir LT Pro', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: var(--text-main);
 }
 
 .hero-description .title,
 h1, h2, h3 {
-  font-family: 'Poppins', 'Avenir LT Pro', sans-serif;
+  font-family: 'Poppins', 'Pretendard', 'Avenir LT Pro', sans-serif;
   font-weight: 800;
 }

@@ -4,7 +4,7 @@
       <header class="page-title">
         <h1 id="project-title" class="title">Projects</h1>
         <p class="text">
-          I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+          Beyond simple coding, I build efficient and scalable web services with a focus on user experience. Here are my projects built from scratch using Vue.js and PHP, covering everything from planning to deployment.
         </p>
       </header>
       
@@ -125,7 +125,7 @@ const projectList = projects.map(p => ({
             }
 
             .card-left-inner {
-              padding: 60px 20px 70px 40px;
+              padding: 60px 30px 70px 40px;
 
               .card-head {
                 .project-title {
@@ -143,10 +143,22 @@ const projectList = projects.map(p => ({
               }
 
               .project-body {
+                font-family: 'Pretendard';
                 margin-top: 40px;
                 font-size: 17px;
                 line-height: 1.5em;
-                font-weight: 300;
+                font-weight: 400;
+              }
+            }
+          }
+
+          .card-right {
+            .thumb {
+              height: 100%;
+
+              img {
+                height: 100%;
+                object-fit: cover;
               }
             }
           }
