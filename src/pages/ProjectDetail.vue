@@ -11,13 +11,19 @@
           <p class="overview-text">{{ project.overview }}</p>
           <h3 class="meta-title">Meta</h3>
           <dl class="meta-dl">
-            <div 
+            <div
               v-for="row in project.metaRows"
               :key="row.label"
               class="meta-row"
             >
               <dt class="meta-k">{{ row.label }}</dt>
               <dd class="meta-v">{{ row.value }}</dd>
+            </div>
+            <div v-if="project.link" class="meta-row">
+              <dt class="meta-k">Live</dt>
+              <dd class="meta-v">
+                <a :href="project.link" target="_blank" rel="noopener noreferrer" class="meta-link">{{ project.link }}</a>
+              </dd>
             </div>
           </dl>
         </div>
@@ -181,6 +187,16 @@ const isVideo = (src) => {
               color: var(--text-body);
               font-weight: 300;
               font-size: 17px;
+
+              .meta-link {
+                color: var(--primary);
+                text-decoration: underline;
+                word-break: break-all;
+
+                &:hover {
+                  opacity: 0.75;
+                }
+              }
             }
           }
         }

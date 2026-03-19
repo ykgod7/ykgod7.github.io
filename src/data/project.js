@@ -1,4 +1,12 @@
-import exampleThumb from "@/assets/images/example.jpg";
+// UniRanker
+import UniRankerThumb from "@/assets/images/uniranker/uniranker-thumbnail.png";
+import UniRankerMain1 from "@/assets/images/uniranker/uniranker-mainpage1.png";
+import UniRankerMain2 from "@/assets/images/uniranker/uniranker-mainpage2.png";
+import UniRankerDetail1 from "@/assets/images/uniranker/uniranker-detailpage1.png";
+import UniRankerDetail2 from "@/assets/images/uniranker/uniranker-detailpage2.png";
+import UniRankerDetail3 from "@/assets/images/uniranker/uniranker-detailpage3.png";
+import UniRankerDetail4 from "@/assets/images/uniranker/uniranker-detailpage4.png";
+import UniRankerDetail5 from "@/assets/images/uniranker/uniranker-detailpage5.png";
 
 // LoL Map
 import LolThumb from "@/assets/images/lol/lol-0.png";
@@ -22,37 +30,40 @@ import SimpleCMSVideo from "@/assets/images/simpleCMS/cms-video.mp4";
 export const projects = [
   {
     // Project Page
-    slug: "uniranker",
-    title: "UniRanker",
-    role: "Frontend Developer",
-    summary: "A university ranking platform utilizing public data to offer comprehensive insights. Features an intuitive interface for easy access to university metrics and comparisons.",
-    thumbnail: exampleThumb,
+    slug: 'uniranker',
+    title: 'UniRanker',
+    role: 'Full Stack Developer',
+    summary: '대학알리미 등 공공 데이터를 기반으로 국내 대학의 취업률·등록금·연구지표를 종합 분석해 순위를 제공하는 대학 정보 플랫폼입니다. 지역 필터·키워드 검색과 상세 지표 시각화 등 직관적인 인터페이스를 구현했습니다.',
+    thumbnail: UniRankerThumb,
+    link: 'https://uniranker.co.kr',
 
 
 
     // Detail Page
-    overview: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.",
+    overview: '대학알리미 등 공공기관 공개 데이터를 수집·정규화하여, 취업 성과·교육환경·연구력·연구비·특허 등 다양한 지표를 가중치 방식으로 종합 산출한 대학 순위 서비스입니다. 사용자는 지역 필터와 키워드 검색으로 원하는 대학을 빠르게 찾고, 상세 페이지에서 입학·취업·교원·연구 지표를 차트와 카드 형태로 한눈에 확인할 수 있습니다.',
     metaRows: [
-      { label: "Role", value: "Frontend Developer" },
-      { label: "Period", value: "2025" },
-      { label: "Tech Stack", value: "Vue · NestJS · MySQL · AWS" },
+      { label: 'Role', value: 'Full Stack Developer' },
+      { label: 'Period', value: '2025' },
+      { label: 'Tech Stack', value: 'Vue · NestJS · TypeORM · MySQL · Vercel · AWS' },
     ],
     features: [
-      { title: "List Title", content: "This is a Paragraph. Click on on the text box to editing the content." },
-      { title: "List Title", content: "This is a Paragraph. Click on on the text box to editing the content." },
-      { title: "List Title", content: "This is a Paragraph. Click on on the text box to editing the content." },
+      { title: '대학 순위 테이블 및 필터 검색', content: '전국 대학 TOP 100 순위를 테이블로 표시하고, 지역 드롭다운과 키워드 검색으로 원하는 대학을 즉시 필터링할 수 있습니다. 검색 조건은 URL query parameter에 동기화되어 공유 및 뒤로가기가 자연스럽게 동작합니다.' },
+      { title: '대학 상세 지표 시각화', content: '각 대학의 입학·취업·교원 구성·연구·기숙사 지표를 KPI 카드, 도넛 차트, 리스트 카드로 구분하여 시각화했습니다. Chart.js 기반 도넛 그래프로 교원 구성 비율을 직관적으로 표현합니다.' },
+      { title: '공공 데이터 기반 종합 순위 산정', content: '취업률·취업유지율·전임교원 비율·신입생 충원률·연구 지표 등 20여 개 세부 지표를 백분위 정규화 후 가중치를 적용해 종합점수를 산출합니다. NestJS + TypeORM으로 연도별 통계 데이터를 관리하고 최신 연도 기준으로 자동 집계됩니다.' },
     ],
     CSData: [
-      { challenge: 'This is a Paragraph. Click on on the text', solution: 'This is a Paragraph. Click on on the text box to editing the content.This is a Paragraph. Click on on the text box to editing the content.' },
-      { challenge: 'This is a Paragraph. Click on on the text', solution: 'This is a Paragraph. Click on on the text box to editing the content.This is a Paragraph. Click on on the text box to editing the content.' },
-      { challenge: 'This is a Paragraph. Click on on the text', solution: 'This is a Paragraph. Click on on the text box to editing the content.This is a Paragraph. Click on on the text box to editing the content.' },
+      { challenge: '검색·지역 필터 상태를 URL query parameter에 반영하는 과정에서 watch와 route.query 간 무한 루프가 발생했습니다.', solution: '필터 상태 → URL 갱신은 debounce로 처리하고, URL → 필터 상태 동기화 시 현재 값과 동일하면 router.replace를 호출하지 않도록 분기하여 루프를 방지했습니다.' },
+      { challenge: '모바일에서 네이티브 select 요소가 OS별로 스타일이 다르고 커스터마이징이 불가능하여 디자인 일관성이 깨졌습니다.', solution: '모바일 환경에서는 네이티브 select를 숨기고 커스텀 Bottom Sheet 다이얼로그를 직접 구현했습니다. aria 속성과 focus 관리를 추가해 접근성도 함께 고려했습니다.' },
+      { challenge: '대학 로고 이미지가 없는 경우 broken image 아이콘이 그대로 노출되어 UI가 깨지는 문제가 발생했습니다.', solution: 'img 태그의 @error 이벤트 핸들러를 활용해 로고 로딩 실패 시 default.png로 폴백 처리하여 항상 일관된 UI를 유지했습니다.' },
     ],
     imgList: [
-      { src: exampleThumb, alt: '이미지 alt' },
-      { src: exampleThumb, alt: '이미지 alt' },
-      { src: exampleThumb, alt: '이미지 alt' },
-      { src: exampleThumb, alt: '이미지 alt' },
-      { src: exampleThumb, alt: '이미지 alt' },
+      { src: UniRankerMain1, alt: 'UniRanker 메인 페이지' },
+      { src: UniRankerMain2, alt: 'UniRanker 메인 페이지 2' },
+      { src: UniRankerDetail1, alt: 'UniRanker 대학 상세 페이지 1' },
+      { src: UniRankerDetail2, alt: 'UniRanker 대학 상세 페이지 2' },
+      { src: UniRankerDetail3, alt: 'UniRanker 대학 상세 페이지 3' },
+      { src: UniRankerDetail4, alt: 'UniRanker 대학 상세 페이지 4' },
+      { src: UniRankerDetail5, alt: 'UniRanker 대학 상세 페이지 5' },
     ]
   },
   {
