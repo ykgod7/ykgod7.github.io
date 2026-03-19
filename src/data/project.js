@@ -1,5 +1,14 @@
 import exampleThumb from "@/assets/images/example.jpg";
 
+// LoL Map
+import LolThumb from "@/assets/images/lol/lol-0.png";
+import LolImg1 from "@/assets/images/lol/lol-1.png";
+import LolImg2 from "@/assets/images/lol/lol-2.png";
+import LolImg3 from "@/assets/images/lol/lol-3.png";
+import LolImg4 from "@/assets/images/lol/lol-4.png";
+import LolImg5 from "@/assets/images/lol/lol-5.png";
+import LolVideo from "@/assets/images/lol/lol-video.mp4";
+
 // Simple CMS Admin System
 import SimpleCMSThumb from "@/assets/images/simple_cms_admin_system_thumb.png";
 import SimpleCMSLogin from "@/assets/images/simpleCMS/cms-login.png";
@@ -44,6 +53,39 @@ export const projects = [
       { src: exampleThumb, alt: '이미지 alt' },
       { src: exampleThumb, alt: '이미지 alt' },
       { src: exampleThumb, alt: '이미지 alt' },
+    ]
+  },
+  {
+    // Project Page
+    slug: "lol-map",
+    title: "LoL Map",
+    role: "3D Designer / Frontend Developer",
+    summary: "Blender로 직접 모델링한 League of Legends 맵을 Three.js로 웹 브라우저에서 인터랙티브하게 감상할 수 있도록 구현한 3D 뷰어 프로젝트입니다.",
+    thumbnail: LolThumb,
+
+    // Detail Page
+    overview: "Blender로 제작한 League of Legends 맵을 Three.js를 활용해 웹 브라우저에서 인터랙티브하게 감상할 수 있도록 구현한 3D 뷰어 프로젝트입니다. 로우폴리 스타일로 맵의 주요 오브젝트를 직접 모델링하고 GLB 포맷으로 내보내 웹에 렌더링했습니다.",
+    metaRows: [
+      { label: "Role", value: "3D Designer / Frontend Developer" },
+      { label: "Period", value: "2025" },
+      { label: "Tech Stack", value: "Blender · Three.js · Vue · Vite" },
+    ],
+    features: [
+      { title: "로우폴리 3D 모델링", content: "타워, 몬스터, 나무, 지형 등 맵의 주요 요소를 Blender로 직접 제작하고 GLB 포맷으로 최적화하여 내보냈습니다." },
+      { title: "인터랙티브 3D 뷰어", content: "Three.js와 OrbitControls를 활용해 마우스로 자유롭게 회전·줌·패닝이 가능한 웹 기반 3D 뷰어를 구현했습니다." },
+      { title: "Emission 애니메이션", content: "타워 위 수정 오브젝트에 emissive 머티리얼과 부유 애니메이션을 적용해 맵에 생동감을 더했습니다." },
+    ],
+    CSData: [
+      { challenge: 'GLB 내 특정 오브젝트만 선택적으로 애니메이션을 적용해야 했으나, 노드 이름 구조를 파악하기 어려웠음.', solution: 'model.traverse()로 전체 노드를 순회하며 emissive 머티리얼 여부와 조상 노드 이름을 함께 확인하는 방식으로 대상 메시를 정확히 분류했습니다.' },
+      { challenge: 'emissive 오브젝트가 tone mapping의 영향을 받아 의도한 것보다 어둡게 렌더링됨.', solution: 'material.toneMapped = false 설정과 emissiveIntensity 값 조정으로 항상 밝게 빛나도록 처리했습니다.' },
+    ],
+    imgList: [
+      { src: LolImg1, alt: 'LoL Map 정면 뷰' },
+      { src: LolImg2, alt: 'LoL Map Teemo 확대 뷰' },
+      { src: LolImg3, alt: 'LoL Map Garen 확대 뷰' },
+      { src: LolImg4, alt: 'LoL Map Red monster 확대 뷰' },
+      { src: LolImg5, alt: 'LoL Map Blue monster 확대 뷰' },
+      { src: LolVideo, alt: 'LoL Map 작동 영상' },
     ]
   },
   {
