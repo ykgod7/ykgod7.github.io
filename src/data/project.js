@@ -73,6 +73,7 @@ export const projects = [
     role: "3D Designer / Frontend Developer",
     summary: "Blender로 직접 모델링한 League of Legends 맵을 Three.js로 웹 브라우저에서 인터랙티브하게 감상할 수 있도록 구현한 3D 뷰어 프로젝트입니다.",
     thumbnail: LolThumb,
+    link: 'https://portfolio-lol-map.vercel.app/',
 
     // Detail Page
     overview: "Blender로 제작한 League of Legends 맵을 Three.js를 활용해 웹 브라우저에서 인터랙티브하게 감상할 수 있도록 구현한 3D 뷰어 프로젝트입니다. 로우폴리 스타일로 맵의 주요 오브젝트를 직접 모델링하고 GLB 포맷으로 내보내 웹에 렌더링했습니다.",
