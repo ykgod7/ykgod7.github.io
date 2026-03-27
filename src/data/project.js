@@ -3,6 +3,7 @@ import HankAuctionThumb from "@/assets/images/hankAuction/hankAuction-thumbnail.
 import HankAuctionDetail1 from "@/assets/images/hankAuction/hankAuction_detailpage1.png";
 import HankAuctionDetail2 from "@/assets/images/hankAuction/hankAuction_detailpage2.png";
 import HankAuctionDetail3 from "@/assets/images/hankAuction/hankAuction-detailpage3.png";
+import HankAuctionDetail4 from "@/assets/images/hankAuction/hankAuction-detailpage4.png";
 import HankAuctionVideo from "@/assets/images/hankAuction/hankAuction-video.mp4";
 
 // UniRanker
@@ -138,6 +139,7 @@ export const projects = [
       { src: HankAuctionDetail1, alt: '행크옥션 경매 알림 필터 페이지' },
       { src: HankAuctionDetail2, alt: '행크옥션 카카오톡 알림 메시지' },
       { src: HankAuctionDetail3, alt: '행크옥션 경매 알림 상세 페이지' },
+      { src: HankAuctionDetail4, alt: '행크옥션 경매 알림 썸네일' },
     ]
   },
   {
