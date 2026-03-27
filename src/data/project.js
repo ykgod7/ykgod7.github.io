@@ -1,3 +1,10 @@
+// HankAuction
+import HankAuctionThumb from "@/assets/images/hankAuction/hankAuction-thumbnail.png";
+import HankAuctionDetail1 from "@/assets/images/hankAuction/hankAuction_detailpage1.png";
+import HankAuctionDetail2 from "@/assets/images/hankAuction/hankAuction_detailpage2.png";
+import HankAuctionDetail3 from "@/assets/images/hankAuction/hankAuction-detailpage3.png";
+import HankAuctionVideo from "@/assets/images/hankAuction/hankAuction-video.mp4";
+
 // UniRanker
 import UniRankerThumb from "@/assets/images/uniranker/uniranker-thumbnail.png";
 import UniRankerMain1 from "@/assets/images/uniranker/uniranker-mainpage1.png";
@@ -98,6 +105,39 @@ export const projects = [
       { src: LolImg4, alt: 'LoL Map Red monster 확대 뷰' },
       { src: LolImg5, alt: 'LoL Map Blue monster 확대 뷰' },
       { src: LolVideo, alt: 'LoL Map 작동 영상' },
+    ]
+  },
+  {
+    // Project Page
+    slug: 'hank-auction',
+    title: 'Auction Alert',
+    role: 'Full Stack Developer',
+    summary: '행크옥션 경매 물건을 자동으로 크롤링하고, 지역·물건종류·가격·특수조건 필터에 맞는 신규 물건을 매주 카카오톡으로 알려주는 풀스택 자동화 서비스입니다.',
+    thumbnail: HankAuctionThumb,
+
+    // Detail Page
+    overview: '행크옥션에 등록된 경매 물건을 Playwright로 자동 크롤링하고, 사용자가 웹에서 설정한 필터(지역·물건종류·가격범위·특수조건)를 적용해 조건에 맞는 신규 물건만 매주 월요일 카카오톡으로 발송하는 풀스택 자동화 서비스입니다. GitHub Actions로 스케줄링하며, 유찰 후 재등록된 물건도 입찰일 변경 시 재알림을 보냅니다.',
+    metaRows: [
+      { label: 'Role', value: 'Full Stack Developer' },
+      { label: 'Period', value: '2026' },
+      { label: 'Tech Stack', value: 'Next.js · TypeScript · Tailwind CSS · Python · Playwright · Supabase · GitHub Actions · Kakao API · Vercel' },
+    ],
+    features: [
+      { title: '필터 설정 UI', content: 'Next.js + Tailwind CSS로 제작한 웹 필터 페이지에서 지역(17개 시도), 물건종류(주거용/상업용), 가격범위(감정가·최저입찰가), 특수조건(유치권·지분경매 등 10종)을 칩 형태로 직관적으로 설정할 수 있습니다. 설정값은 Supabase에 저장됩니다.' },
+      { title: '자동 크롤링 및 스케줄링', content: 'Playwright(headless Chromium)로 행크옥션을 크롤링하여 최신 경매 물건을 수집합니다. GitHub Actions 스케줄러(매주 월요일 오전 9시 KST)가 자동으로 실행하며, 이미 발송한 물건은 Supabase sent_items 테이블로 중복 발송을 방지합니다.' },
+      { title: '카카오톡 알림 발송', content: '카카오 나에게 보내기 API를 통해 조건에 맞는 물건 정보(지역·물건종류·감정가·최저입찰가·입찰기일·특수조건 등)를 텍스트 메시지로 발송합니다. 리프레시 토큰으로 액세스 토큰을 매 실행 시 자동 갱신하여 토큰 만료 문제를 해결했습니다.' },
+      { title: '유찰 재알림', content: '동일 물건이 유찰된 후 새 입찰일로 재등록되면 다시 알림을 보냅니다. sent_items 테이블의 PK를 (case_number, bid_date) 복합키로 설계하여 날짜가 변경된 물건을 신규로 처리합니다.' },
+    ],
+    CSData: [
+      { challenge: '행크옥션은 JavaScript로 목록을 렌더링하기 때문에 requests + BeautifulSoup으로는 데이터를 가져올 수 없었습니다.', solution: 'Playwright(headless Chromium)로 전환하여 JS 렌더링이 완료된 후 DOM을 파싱했습니다. 정렬 변경 후 page.wait_for_selector()로 렌더링 완료를 확인한 뒤 데이터를 추출합니다.' },
+      { challenge: 'GitHub Actions가 Ubuntu 24.04로 업데이트되면서 playwright install-deps 명령이 libasound2 패키지명 변경으로 실패했습니다.', solution: 'install-deps 대신 Ubuntu 24.04에 맞는 패키지명(libasound2t64 등)으로 직접 apt-get install하는 방식으로 우회했습니다.' },
+      { challenge: '카카오 액세스 토큰은 6시간 후 만료되어 매주 수동으로 갱신해야 하는 운영 부담이 있었습니다.', solution: '리프레시 토큰(60일 유효, 사용 시 자동 연장)을 GitHub Secrets에 저장하고 크롤러 실행 시마다 자동으로 새 액세스 토큰을 발급받도록 구현했습니다. 매주 실행하면 리프레시 토큰이 계속 연장되어 사실상 영구 운영이 가능합니다.' },
+    ],
+    imgList: [
+      { src: HankAuctionVideo, alt: '행크옥션 경매 알림 작동 영상' },
+      { src: HankAuctionDetail1, alt: '행크옥션 경매 알림 필터 페이지' },
+      { src: HankAuctionDetail2, alt: '행크옥션 카카오톡 알림 메시지' },
+      { src: HankAuctionDetail3, alt: '행크옥션 경매 알림 상세 페이지' },
     ]
   },
   {
