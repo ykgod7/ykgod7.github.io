@@ -168,4 +168,57 @@ const projectList = projects.map(p => ({
   }
 }
 
+@media screen and (max-width: 768px) {
+  .project {
+    .project-inner {
+      padding: 60px 24px 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .project {
+    .project-inner {
+      padding: 50px 20px 80px;
+
+      .project-section {
+        .card-list {
+          gap: 40px;
+
+          .project-card {
+            grid-template-columns: 1fr;
+            min-height: unset;
+
+            .card-left {
+              .accent-bar {
+                top: 40px;
+              }
+
+              .card-left-inner {
+                padding: 40px 24px 40px 32px;
+
+                .project-body {
+                  margin-top: 20px;
+                  font-size: 15px;
+                }
+              }
+            }
+
+            .card-right {
+              .thumb {
+                height: 200px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

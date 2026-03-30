@@ -285,4 +285,48 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .resume {
+    .resume-inner {
+      padding: 60px 24px 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .resume {
+    .resume-inner {
+      padding: 50px 20px 60px;
+
+      .resume-section {
+        margin-top: 60px;
+
+        .card-list {
+          .resume-card {
+            flex-direction: column;
+            gap: 24px;
+            padding: 36px 24px;
+
+            .card-left {
+              width: 100%;
+            }
+
+            .card-right {
+              width: 100%;
+
+              p {
+                font-size: 15px;
+              }
+            }
+
+            .skill-list {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 24px 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

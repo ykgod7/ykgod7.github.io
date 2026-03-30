@@ -99,7 +99,7 @@ const isVideo = (src) => {
 
 .project-detail {
   background-color: var(--bg-section);
-  padding: 40px 0 100px;
+  padding: 80px 0 100px;
 
   .detail-inner {
     width: 100%;
@@ -236,7 +236,7 @@ const isVideo = (src) => {
       margin-top: 50px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 100px;
+      gap: 40px;
 
       .feature-item {
         display: flex;
@@ -312,6 +312,117 @@ const isVideo = (src) => {
     font-size: 36px;
     font-family: 'Poppins';
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .project-detail {
+    .detail-inner {
+      padding: 0 24px;
+
+      .img-container {
+        .card {
+          img, video {
+            height: 280px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project-detail {
+    .detail-inner {
+      .header-container {
+        grid-template-columns: 1fr;
+        min-height: unset;
+        padding: 0 0 40px;
+
+        .page-title {
+          .title {
+            font-size: 48px;
+          }
+        }
+      }
+
+      .img-container {
+        grid-template-columns: 1fr;
+
+        .card {
+          img, video {
+            height: 260px;
+          }
+        }
+      }
+    }
+  }
+
+  .card {
+    &.feature {
+      padding: 50px 30px;
+    }
+
+    &.normal {
+      padding: 50px 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .project-detail {
+    padding: 60px 0 60px;
+
+    .detail-inner {
+      padding: 0 16px;
+
+      .header-container {
+        .page-title {
+          .title {
+            font-size: 36px;
+          }
+        }
+      }
+
+      .img-container {
+        gap: 20px;
+
+        .card {
+          img, video {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .card {
+    &.feature {
+      padding: 40px 20px;
+
+      .feature-container {
+        grid-template-columns: 1fr;
+
+        .feature-item {
+        }
+      }
+    }
+
+    &.normal {
+      padding: 40px 20px;
+    }
+
+    .card-title {
+      font-size: 26px;
+    }
+
+    .cs-container {
+      margin-top: 50px;
+
+      .text {
+        font-size: 15px;
+      }
+    }
   }
 }
 </style>
