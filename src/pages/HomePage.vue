@@ -84,7 +84,7 @@
   z-index: 1;
   max-width: 1000px;
   width: 100%;
-  background: #fff;
+  background: #f9f7f7;
   position: absolute;
   top: 50%;
   left: 50%;

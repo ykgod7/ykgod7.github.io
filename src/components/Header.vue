@@ -65,7 +65,7 @@ watch(isOpen, (v) => {
   top: 0;
   z-index: 100;
   height: 130px;
-  background: var(--bg-main);
+  background: #fff;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
 
   .header-inner {
