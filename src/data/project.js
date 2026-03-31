@@ -1,7 +1,18 @@
+// AI Code Reviewer
+import AiCodeReviewerThumb from "@/assets/images/aiCodeReviewer/aiCodeReviewer-thumbnail.png";
+import AiCodeReviewerDetail1 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage1.png";
+import AiCodeReviewerDetail2 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage2.png";
+import AiCodeReviewerDetail3 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage3.png";
+import AiCodeReviewerDetail4 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage4.png";
+import AiCodeReviewerDetail5 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage5.png";
+import AiCodeReviewerDetail6 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-detailpage6.png";
+import AiCodeReviewerVideo1 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-video1.mp4";
+import AiCodeReviewerVideo2 from "@/assets/images/aiCodeReviewer/aiCodeReviewer-video2.mp4";
+
 // HankAuction
 import HankAuctionThumb from "@/assets/images/hankAuction/hankAuction-thumbnail.png";
-import HankAuctionDetail1 from "@/assets/images/hankAuction/hankAuction_detailpage1.png";
-import HankAuctionDetail2 from "@/assets/images/hankAuction/hankAuction_detailpage2.png";
+import HankAuctionDetail1 from "@/assets/images/hankAuction/hankAuction-detailpage1.png";
+import HankAuctionDetail2 from "@/assets/images/hankAuction/hankAuction-detailpage2.png";
 import HankAuctionDetail3 from "@/assets/images/hankAuction/hankAuction-detailpage3.png";
 import HankAuctionDetail4 from "@/assets/images/hankAuction/hankAuction-detailpage4.png";
 import HankAuctionVideo from "@/assets/images/hankAuction/hankAuction-video.mp4";
@@ -106,6 +117,43 @@ export const projects = [
       { src: LolImg4, alt: 'LoL Map Red monster 확대 뷰' },
       { src: LolImg5, alt: 'LoL Map Blue monster 확대 뷰' },
       { src: LolVideo, alt: 'LoL Map 작동 영상' },
+    ]
+  },
+  {
+    // Project Page
+    slug: 'ai-code-reviewer',
+    title: 'AI Code Reviewer',
+    role: 'Full Stack Developer',
+    summary: 'GitHub PR의 변경 코드를 버그·성능·보안 역할로 분리된 3개의 Claude AI 에이전트가 병렬 분석해 이슈를 자동으로 리뷰하는 풀스택 웹 애플리케이션입니다. GitHub Actions와 연동해 PR 생성 시 자동으로 리뷰 코멘트를 게시합니다.',
+    thumbnail: AiCodeReviewerThumb,
+    link: 'https://portfolio-ai-code-reviewer.vercel.app/',
+
+    // Detail Page
+    overview: 'GitHub PR URL을 입력하면 버그 탐지·성능 분석·보안 점검 역할이 분리된 3개의 Claude AI 에이전트가 Promise.allSettled()로 병렬 실행되어 코드를 동시에 분석합니다. 분석 결과는 Claude API 스트리밍으로 실시간 출력되며, GitHub Actions와 연동해 PR이 열릴 때 자동으로 리뷰 코멘트를 게시하는 CI 파이프라인까지 구현했습니다.',
+    metaRows: [
+      { label: 'Role', value: 'Full Stack Developer' },
+      { label: 'Period', value: '2026' },
+      { label: 'Tech Stack', value: 'Next.js · TypeScript · Tailwind CSS · Anthropic Claude API · GitHub REST API · GitHub Actions · Vercel' },
+    ],
+    features: [
+      { title: '멀티 에이전트 병렬 분석', content: '버그 탐지·성능 분석·보안 점검 역할이 분리된 3개의 에이전트를 Promise.allSettled()로 동시에 실행합니다. 하나의 에이전트가 실패해도 나머지 결과는 유지되며, 각 에이전트는 system prompt만 다른 독립적인 Claude API 호출로 구성됩니다.' },
+      { title: '실시간 스트리밍 출력', content: 'Claude API의 스트리밍 기능과 Next.js App Router의 ReadableStream을 활용해 분석 결과를 타이핑되듯 실시간으로 UI에 출력합니다. Server-Sent Events 방식으로 에이전트별 결과를 순차적으로 클라이언트에 전달합니다.' },
+      { title: 'GitHub Actions 자동화', content: 'PR이 열리거나 업데이트될 때 GitHub Actions가 자동으로 AI 리뷰를 실행하고, 분석 결과를 마크다운 형식으로 PR 코멘트에 게시합니다. 웹앱과 GitHub Actions 두 진입점이 동일한 에이전트 코어를 공유합니다.' },
+    ],
+    CSData: [
+      { challenge: '단일 Claude 호출로는 버그·성능·보안을 한 번에 분석하면 각 영역의 집중도가 떨어지고 응답 품질이 낮아지는 문제가 있었습니다.', solution: 'system prompt가 다른 3개의 에이전트로 역할을 분리하고 Promise.allSettled()로 병렬 실행했습니다. 단일 호출 대비 각 에이전트가 전문 역할에만 집중해 이슈 탐지 정밀도가 높아졌습니다.' },
+      { challenge: 'GitHub Actions CI 환경에서 TypeScript 파일(scripts/review.ts)을 직접 실행할 수 없었습니다.', solution: 'tsx를 devDependency로 추가하고 npx tsx로 실행했습니다. 별도 빌드 단계 없이 TypeScript를 Node.js에서 직접 실행해 CI 파이프라인을 단순하게 유지했습니다.' },
+      { challenge: 'Claude API 스트리밍 응답과 Promise.allSettled() 병렬 실행을 동시에 처리할 때 에이전트별 결과를 UI에 순차적으로 전달하는 구조 설계가 필요했습니다.', solution: 'runAgents()에 onResult 콜백을 두어 에이전트 완료 시마다 즉시 결과를 방출하도록 설계했습니다. API Route에서 ReadableStream으로 감싸 SSE 형식으로 클라이언트에 실시간 전달합니다.' },
+    ],
+    imgList: [
+      { src: AiCodeReviewerVideo1, alt: 'AI Code Reviewer 웹앱 데모' },
+      { src: AiCodeReviewerVideo2, alt: 'AI Code Reviewer GitHub Actions 데모' },
+      { src: AiCodeReviewerDetail1, alt: 'AI Code Reviewer 웹앱 분석 결과' },
+      { src: AiCodeReviewerDetail2, alt: 'AI Code Reviewer 분석 결과 상세' },
+      { src: AiCodeReviewerDetail3, alt: 'AI Code Reviewer GitHub PR 코멘트' },
+      { src: AiCodeReviewerDetail4, alt: 'AI Code Reviewer GitHub Actions 실행 로그' },
+      { src: AiCodeReviewerDetail5, alt: 'AI Code Reviewer 웹앱 화면 2' },
+      { src: AiCodeReviewerDetail6, alt: 'AI Code Reviewer 웹앱 화면 3' },
     ]
   },
   {
