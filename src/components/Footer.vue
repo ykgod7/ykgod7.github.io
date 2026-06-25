@@ -4,12 +4,12 @@
       <div class="footer-right">
         <div class="footer-block">
           <p class="footer-label">Call</p>
-          <a class="footer-link" href="tel:+821012345678">+82 10-8424-7446</a>
+          <a class="footer-link" href="tel:+821084247446">+82 10-8424-7446</a>
         </div>
 
         <div class="footer-block">
           <p class="footer-label">Write</p>
-          <a class="footer-link" href="mailto:jihwan@example.com">ejihwan7@gmail.com</a>
+          <a class="footer-link" href="mailto:ejihwan7@gmail.com">ejihwan7@gmail.com</a>
         </div>
 
         <!-- Follow -->
@@ -19,8 +19,11 @@
             <a class="icon-link" href="https://github.com/ykgod7" target="_blank" rel="noopener" aria-label="GitHub">
               <img src="@/assets/images/github-icon.png" alt="" />
             </a>
-            <a class="icon-link" href="javascript:void(0)" target="_blank" rel="noopener" aria-label="Instagram">
+            <a class="icon-link" href="https://www.instagram.com/ykgod7" target="_blank" rel="noopener" aria-label="Instagram">
               <img src="@/assets/images/instagram-icon.png" alt="" />
+            </a>
+            <a class="icon-link" href="https://velog.io/@ykgod7/posts" target="_blank" rel="noopener" aria-label="velog">
+              <img src="@/assets/images/velog-icon.svg" alt="" />
             </a>
           </div>
         </div>

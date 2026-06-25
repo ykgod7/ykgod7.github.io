@@ -18,8 +18,11 @@
             <a href="https://github.com/ykgod7" target="_blank">
               <img src="@/assets/images/github-icon.png" alt="" />
             </a>
-            <a href="https://github.com/your-id" target="_blank">
+            <a href="https://www.instagram.com/ykgod7" target="_blank" rel="noopener">
               <img src="@/assets/images/instagram-icon.png" alt="" />
+            </a>
+            <a href="https://velog.io/@ykgod7/posts" target="_blank" rel="noopener" aria-label="velog">
+              <img src="@/assets/images/velog-icon.svg" alt="" />
             </a>
           </div>
         </aside>
